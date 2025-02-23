@@ -1,0 +1,8 @@
+cat
+dog
+bat
+god
+odg
+act
+tac
+cat

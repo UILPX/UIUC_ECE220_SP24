@@ -1,0 +1,3 @@
+bat 
+cat act tac 
+dog god odg 

@@ -1,0 +1,32 @@
+#/bin/sh
+student_dir="./"
+
+#compilation commands
+gcc -g -std=c99 -Wall -Werror main.c prog5.c -o mp5
+gcc -g -std=c99 -Wall -Werror test.c prog5.c -o test5
+#generate gold
+./gold-version < testinput1 1> testgold_output1
+./gold-version < testinput2 1> testgold_output2
+./gold-version < testinput3 1> testgold_output3
+./mp5 < testinput1 1> teststu_output1
+./mp5 < testinput2 1> teststu_output2
+./mp5 < testinput3 1> teststu_output3
+echo "Testing three output files"
+	diff -q ./teststu_output1 ./testgold_output1
+	error1=$?
+	diff -q ./teststu_output2 ./testgold_output2
+	error2=$?
+	diff -q ./teststu_output3 ./testgold_output3
+	error3=$?
+	if [ $error1 -eq 0 -a $error2 -eq 0 -a $error3 -eq 0 ] 
+	then
+		echo "*******3 Outputs Match Exactly Functionality: 90/90*******"
+	else 
+		echo "*******3 Outputs Do Not Match Exactly 0/10*******"
+		./test5 0
+		./test5 1
+		./test5 2
+		./test5 3
+		./test5 4
+	fi
+

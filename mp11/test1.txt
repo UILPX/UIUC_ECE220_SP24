@@ -1,0 +1,10 @@
+8
+Circle 2
+Rectangle 2 3
+Sphere 3 
+RectPrism 2 3 4
+Circle 9.2
+Rectangle 10.3 4.7
+Sphere 4.9
+RectPrism 9.2 5.3 4.9
+
